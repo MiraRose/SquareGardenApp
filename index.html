@@ -13,29 +13,31 @@
 </head>
 
 <body>
-<div id = main>
+<div id = "main">
     <div class = "dirt">
-    <div class = "container dirtArea">
+    <div  class = "container dirtArea">
         <div class = "row no-gutters">
 
             <div class = "col-sm-3 outerSquareBorder">
-                <div class = "square">
-                        <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Add a vegetable.
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Tomato</a>
-                                  <a class="dropdown-item" href="#">Carrot</a>
-                                  <a class="dropdown-item" href="#">Oregano</a>
-                                </div>
-                              </div>
+                <div id = selectionBox class = "square">
+                        <select v-model="selected">
+                                <option v-for="option in options" v-bind:value="option.value">
+                                  {{ option.text }}
+                                </option>
+                              </select>
+                              <p>{{ selected }}</p>
                 </div>
             </div>
+        
 
             <div class = "col-sm-3 outerSquareBorder">
-                <div class = "square">
-                        <p>Moooooooooooo</p>
+                    <div id = selectionBox class = "square">
+                            <select v-model="selected">
+                                    <option v-for="option in options" v-bind:value="option.value">
+                                      {{ option.text }}
+                                    </option>
+                                  </select>
+                                  <p>{{ selected }}</p>
                     </div>
             </div>
 
@@ -144,6 +146,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="javascript.js"></script>
 
 </body>
 </html>
