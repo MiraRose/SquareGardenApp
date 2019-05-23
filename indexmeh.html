@@ -17,18 +17,32 @@
 <body>
 
         <div id="example-1">
-                <div v-for="item in items" style="background-color: red">
-                        <div class="outerSquareBorder">
-                                <div id="selectionBox" class="square">
-                                        <select v-model="selected">
-                                                <option v-for="option in options" v-bind:value="option.value">
-                                                        {{ option.text }}
-                                                </option>
-                                        </select>
-                                        <p>{{ selected }}</p>
+
+                <button v-on:click="counter += 1">Add 1</button>
+                <p>The button above has been clicked {{ counter }} times.</p>
+                <div class="container dirtArea">
+                        <div v-for="row in plots">
+                                <div class="row no-gutter">
+                                        <div v-for="plot in row">
+                                                <div class="col-md-3">
+                                                        <div class="outerSquareBorder square">
+                                                                <div>
+                                                                        <select v-model="plot.selected">
+                                                                                <option v-for="option in options"
+                                                                                        v-bind:value="option.value">
+                                                                                        {{ option.text }}
+                                                                                </option>
+                                                                        </select>
+                                                                        <p>{{ plot.selected }}</p>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
-                        </div>{{ item.message }}
+                        </div>
                 </div>
+
         </div>
 
 

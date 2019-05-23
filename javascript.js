@@ -11,24 +11,76 @@
 //     }
 //   })
 
-  var example1 = new Vue({
+
+
+// Vue.component('button-counter', {
+//     data: function () {
+//       return {
+//         count: 0
+//       }
+//     },
+//     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+//   })
+
+// Vue.componant('GardenBox', {
+//     template: '<div class="GardenBox square"><select v-model="selected"><option v-for="option in options" v-bind: value="option.value">{{ option.text }}</option></select><p>{{ selected }}</p>{{ item.message }}</div> ',
+//     data () {
+//         selected: 'Tomato',
+//         options: [
+//             { text: 'Tomato', value: 'Tomato' },
+//             { text: 'Carrot', value: 'Carrot' },
+//             { text: 'Lettuce', value: 'Lettuce' }
+//         ]
+//     }
+
+//  })
+
+var example1 = new Vue({
     el: '#example-1',
     data: {
-      items: [
-        { message: 'Foo' },
-        { message: 'Bar' }
-      ],
-      selected: 'Tomato',
-      options: [
-        { text: 'Tomato', value: 'Tomato' },
-        { text: 'Carrot', value: 'Carrot' },
-        { text: 'Lettuce', value: 'Lettuce' }
-      ]
+        plots: [
+            [
+                { selected: 'Row1-Box1' },
+                { selected: 'Row1-Box2' },
+                { selected: 'Row1-Box3' },
+                { selected: 'Row1-Box4' }
+            ],
+
+            [
+                { selected: 'Row2-Box1' },
+                { selected: 'Row2-Box2' },
+                { selected: 'Row2-Box3' },
+                { selected: 'Row2-Box4' }
+            ],
+            [
+                { selected: 'Row3-Box1' },
+                { selected: 'Row3-Box2' },
+                { selected: 'Row3-Box3' },
+                { selected: 'Row3-Box4' }
+            ],
+
+            [
+                { selected: 'Row4-Box1' },
+                { selected: 'Row4-Box2' },
+                { selected: 'Row4-Box3' },
+                { selected: 'Row4-Box4' }
+            ],
+        ],
+        selected: 'Tomato',
+        options: [
+            { text: 'Tomato', value: 'Tomato' },
+            { text: 'Carrot', value: 'Carrot' },
+            { text: 'Lettuce', value: 'Lettuce' },
+            { text: 'Dill', value: 'Dill' },
+            { text: 'Marigold', value: 'Marigold' },
+            { text: 'Basil', value: 'Basil' }
+        ],
+        counter: 1
     }
-  })
+})
 
 //   for (i = 0; i < 10; i++) {
-    
+
 
 //     <div class = "col-sm-3 outerSquareBorder">
 //         <div id = i class = "square">
@@ -49,6 +101,6 @@
 //         </div>
 //         <div class = "row no-gutters">
 
-            
+
 //     }
 //   }
