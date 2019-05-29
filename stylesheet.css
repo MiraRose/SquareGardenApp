@@ -19,5 +19,5 @@ body {
 
 .square {
     background-color: brown;
-    padding-bottom: 100%;
+    /* padding-bottom: 100%; */
 }

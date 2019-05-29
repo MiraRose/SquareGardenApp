@@ -27,13 +27,15 @@
                                                 <div class="col-md-3">
                                                         <div class="outerSquareBorder square">
                                                                 <div>
-                                                                        <select v-model="plot.selected">
+                                                                        <select v-model="plot.selected" v-on:change="veggieSuggestion(plot)">
                                                                                 <option v-for="option in options"
                                                                                         v-bind:value="option.value">
                                                                                         {{ option.text }}
+                                                                                        
                                                                                 </option>
                                                                         </select>
-                                                                        <p>{{ plot.selected }}</p>
+                                                                        <p>Suggestion for nearby squares: {{ plot.suggestion }}</p>
+                                                                        <p>Current square: {{ plot.selected }}</p>
 
                                                                 </div>
                                                         </div>

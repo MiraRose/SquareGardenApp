@@ -37,33 +37,83 @@
 
 var example1 = new Vue({
     el: '#example-1',
+    
     data: {
+        
         plots: [
             [
-                { selected: 'Row1-Box1' },
-                { selected: 'Row1-Box2' },
-                { selected: 'Row1-Box3' },
-                { selected: 'Row1-Box4' }
+                {
+                    selected: 'Row1-Box1',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row1-Box2',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row1-Box3',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row1-Box4',
+                    suggestion: 'None'
+                }
             ],
 
             [
-                { selected: 'Row2-Box1' },
-                { selected: 'Row2-Box2' },
-                { selected: 'Row2-Box3' },
-                { selected: 'Row2-Box4' }
+                {
+                    selected: 'Row2-Box1',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row2-Box2',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row2-Box3',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row2-Box4',
+                    suggestion: 'None'
+                }
             ],
             [
-                { selected: 'Row3-Box1' },
-                { selected: 'Row3-Box2' },
-                { selected: 'Row3-Box3' },
-                { selected: 'Row3-Box4' }
+                {
+                    selected: 'Row3-Box1',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row3-Box2',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row3-Box3',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row3-Box4',
+                    suggestion: 'None'
+                }
             ],
 
             [
-                { selected: 'Row4-Box1' },
-                { selected: 'Row4-Box2' },
-                { selected: 'Row4-Box3' },
-                { selected: 'Row4-Box4' }
+                {
+                    selected: 'Row4-Box1',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row4-Box2',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row4-Box3',
+                    suggestion: 'None'
+                },
+                {
+                    selected: 'Row4-Box4',
+                    suggestion: 'None'
+                }
             ],
         ],
         selected: 'Tomato',
@@ -76,8 +126,28 @@ var example1 = new Vue({
             { text: 'Basil', value: 'Basil' }
         ],
         counter: 1
+    },
+    
+    methods: {
+        veggieSuggestion: function (plot) {
+            console.log("Plot:", plot.selected);
+            if (plot.selected === 'Carrot') {
+                plot.suggestion = 'Tomato';
+            }
+            if (plot.selected === 'Tomato') {
+                plot.suggestion = 'Marigold, Dill, Basil';
+            }
+            if (plot.selected === 'Dill') {
+                plot.suggestion = 'Tomato';
+            }
+            if (plot.selected === 'Basil') {
+                plot.suggestion = 'Tomato'
+            }
+        }
     }
-})
+}
+
+)
 
 //   for (i = 0; i < 10; i++) {
 
