@@ -1,120 +1,84 @@
 
-// var selectionBox = new Vue({
-//     el: '#selectionBox',
-//     data: {
-//       selected: 'Tomato',
-//       options: [
-//         { text: 'Tomato', value: 'Tomato' },
-//         { text: 'Carrot', value: 'Carrot' },
-//         { text: 'Lettuce', value: 'Lettuce' }
-//       ]
-//     }
-//   })
-
-
-
-// Vue.component('button-counter', {
-//     data: function () {
-//       return {
-//         count: 0
-//       }
-//     },
-//     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-//   })
-
-// Vue.componant('GardenBox', {
-//     template: '<div class="GardenBox square"><select v-model="selected"><option v-for="option in options" v-bind: value="option.value">{{ option.text }}</option></select><p>{{ selected }}</p>{{ item.message }}</div> ',
-//     data () {
-//         selected: 'Tomato',
-//         options: [
-//             { text: 'Tomato', value: 'Tomato' },
-//             { text: 'Carrot', value: 'Carrot' },
-//             { text: 'Lettuce', value: 'Lettuce' }
-//         ]
-//     }
-
-//  })
-
 var example1 = new Vue({
     el: '#example-1',
-    
+
     data: {
-        
+
         plots: [
-            [
-                {
-                    selected: 'Row1-Box1',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row1-Box2',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row1-Box3',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row1-Box4',
-                    suggestion: 'None'
-                }
-            ],
+            // [
+            //     {
+            //         selected: 'Row1-Box1',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row1-Box2',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row1-Box3',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row1-Box4',
+            //         suggestion: 'None'
+            //     }
+            // ],
 
-            [
-                {
-                    selected: 'Row2-Box1',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row2-Box2',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row2-Box3',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row2-Box4',
-                    suggestion: 'None'
-                }
-            ],
-            [
-                {
-                    selected: 'Row3-Box1',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row3-Box2',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row3-Box3',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row3-Box4',
-                    suggestion: 'None'
-                }
-            ],
+            // [
+            //     {
+            //         selected: 'Row2-Box1',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row2-Box2',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row2-Box3',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row2-Box4',
+            //         suggestion: 'None'
+            //     }
+            // ],
+            // [
+            //     {
+            //         selected: 'Row3-Box1',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row3-Box2',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row3-Box3',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row3-Box4',
+            //         suggestion: 'None'
+            //     }
+            // ],
 
-            [
-                {
-                    selected: 'Row4-Box1',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row4-Box2',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row4-Box3',
-                    suggestion: 'None'
-                },
-                {
-                    selected: 'Row4-Box4',
-                    suggestion: 'None'
-                }
-            ],
+            // [
+            //     {
+            //         selected: 'Row4-Box1',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row4-Box2',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row4-Box3',
+            //         suggestion: 'None'
+            //     },
+            //     {
+            //         selected: 'Row4-Box4',
+            //         suggestion: 'None'
+            //     }
+            // ],
         ],
         selected: 'Tomato',
         options: [
@@ -125,9 +89,18 @@ var example1 = new Vue({
             { text: 'Marigold', value: 'Marigold' },
             { text: 'Basil', value: 'Basil' }
         ],
-        counter: 1
+
     },
-    
+    created: function () {
+            var i = 0;
+            var x = 0;
+            for (i = 0; i < 4; i++) {
+                this.plots.push([]);
+                for (x = 0; x < 4; x++) {
+                    this.plots[i].push({selected: `row${i}box${x}`, suggestion: 'none'});
+                }
+            }
+        },
     methods: {
         veggieSuggestion: function (plot) {
             console.log("Plot:", plot.selected);

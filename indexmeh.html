@@ -18,27 +18,26 @@
 
         <div id="example-1">
 
-                <button v-on:click="counter += 1">Add 1</button>
-                <p>The button above has been clicked {{ counter }} times.</p>
+                <!-- <button v-on:click="counter += 1">Add 1</button>
+                <p>The button above has been clicked {{ counter }} times.</p> -->
                 <div class="container dirtArea">
                         <div v-for="row in plots">
                                 <div class="row no-gutter">
                                         <div v-for="plot in row">
-                                                <div class="col-md-3">
-                                                        <div class="outerSquareBorder square">
-                                                                <div>
-                                                                        <select v-model="plot.selected" v-on:change="veggieSuggestion(plot)">
-                                                                                <option v-for="option in options"
-                                                                                        v-bind:value="option.value">
-                                                                                        {{ option.text }}
-                                                                                        
-                                                                                </option>
-                                                                        </select>
-                                                                        <p>Suggestion for nearby squares: {{ plot.suggestion }}</p>
-                                                                        <p>Current square: {{ plot.selected }}</p>
+                                                <div class="col-md-3 outerSquareBorder square">
 
-                                                                </div>
-                                                        </div>
+                                                        <select v-model="plot.selected"
+                                                                v-on:change="veggieSuggestion(plot)">
+                                                                <option v-for="option in options"
+                                                                        v-bind:value="option.value">
+                                                                        {{ option.text }}
+
+                                                                </option>
+                                                        </select>
+                                                        <p>Suggestion for nearby squares: {{ plot.suggestion }}
+                                                        </p>
+                                                        <p>Current square: {{ plot.selected }}</p>
+
                                                 </div>
                                         </div>
                                 </div>
