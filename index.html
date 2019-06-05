@@ -17,15 +17,14 @@
 <body>
 
         <div id="app">
-
-                <!-- <button v-on:click="counter += 1">Add 1</button>
-                <p>The button above has been clicked {{ counter }} times.</p> -->
                 <div>
-                   <div v-for= "item in items">
-                           {{ item }}
-                   </div>     
+                        <h2>List of Plants</h2>
+                        <div v-for="item in items">
+                                {{ item }}
+                        </div>
+                        <button v-on:click="items = []">Clear</button>
                 </div>
-                
+
                 <div class="container dirtArea">
                         <div v-for="row in plots">
                                 <div class="row no-gutter">

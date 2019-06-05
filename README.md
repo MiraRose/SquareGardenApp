@@ -4,6 +4,7 @@ Currently you can:
 
 1. Select a (limited selection of) veggie from the drop box to apply it to a square
 2. Get (limited) suggestions in that square for nearby squares
+3. Makes list, but doesn't update list when a square changes.
 
 Planned features, in no particular order:
 
@@ -16,4 +17,4 @@ Planned features, in no particular order:
 5. Being able to sow underneath other veggies (carrots under tomatos)
 6. Custom sized beds
 7. Helpful tips (ie: rabbits really like this, prepare, bury tomatoes 1/2 - 3/4)
-8. Create and export list for shopping
+8. Functioning create and export/print list for shopping

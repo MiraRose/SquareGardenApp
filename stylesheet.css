@@ -3,6 +3,12 @@ body {
     background-image: url("images/grassbackground.png");
 }
 
+h2 {
+    color: whitesmoke;
+    margin-left: 2px;
+}
+ 
+
 .dirtArea {
     background-color: brown;
     margin: 25px auto auto auto;
