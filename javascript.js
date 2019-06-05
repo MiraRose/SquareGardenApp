@@ -7,6 +7,7 @@ var app = new Vue({
         plots: [
 
         ],
+
         selected: 'Tomato',
         options: [
             { text: 'Tomato', value: 'Tomato' },
@@ -16,7 +17,9 @@ var app = new Vue({
             { text: 'Marigold', value: 'Marigold' },
             { text: 'Basil', value: 'Basil' }
         ],
+        items: [
 
+        ]
     },
     created: function () {
         var i = 0;
@@ -42,6 +45,9 @@ var app = new Vue({
             if (plot.selected === 'Basil') {
                 plot.suggestion = 'Tomato'
             }
+        },
+        shoppingItems: function (plot) {
+            this.items.push(plot.selected);
         }
     }
 }

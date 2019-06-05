@@ -20,6 +20,12 @@
 
                 <!-- <button v-on:click="counter += 1">Add 1</button>
                 <p>The button above has been clicked {{ counter }} times.</p> -->
+                <div>
+                   <div v-for= "item in items">
+                           {{ item }}
+                   </div>     
+                </div>
+                
                 <div class="container dirtArea">
                         <div v-for="row in plots">
                                 <div class="row no-gutter">
@@ -27,7 +33,7 @@
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggieSuggestion(plot)">
+                                                                v-on:change="veggieSuggestion(plot); shoppingItems(plot)">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
