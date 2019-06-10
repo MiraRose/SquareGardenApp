@@ -17,33 +17,36 @@
 <body>
 
         <div id="app">
-                <div>
+                <div id="plantList">
                         <h2>List of Plants</h2>
+                        
                         <div v-for="row in plots">
                                 <div v-for= "plot in row">
-                                {{ plot.selected }}
+                                        
+                                <p>{{ plot.selected }} </p>
                         </div>
                         </div>
+                </ul>
                         <!-- <button v-on:click="items = []">Clear</button> -->
                 </div>
 
                 <div class="container dirtArea">
-                        <div v-for="row in plots">
+                        <div v-for="(row, index1) in plots">
                                 <div class="row no-gutter">
-                                        <div v-for="plot in row">
+                                        <div v-for="(plot, index2) in row">
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggieSuggestion(plot); shoppingItems(plot)">
+                                                                v-on:change="veggieSuggestion(plot, index1, index2)">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
 
                                                                 </option>
                                                         </select>
-                                                        <p>Suggestion for nearby squares: {{ plot.suggestion }}
+                                                        <p>Suggested plant: {{ plot.suggestion }}
                                                         </p>
-                                                        <p>Current square: {{ plot.selected }}</p>
+                                                        <p>Current plant: {{ plot.selected }}</p>
 
                                                 </div>
                                         </div>

@@ -17,9 +17,10 @@ var app = new Vue({
             { text: 'Marigold', value: 'Marigold' },
             { text: 'Basil', value: 'Basil' }
         ],
-        items: [
 
-        ]
+        // suggestions: [
+        //     { planted: 'Tomato', suggestion: 'Carrot' }
+        // ]
     },
     created: function () {
         var i = 0;
@@ -32,23 +33,52 @@ var app = new Vue({
         }
     },
     methods: {
-        veggieSuggestion: function (plot) {
+        veggieSuggestion: function (plot, index1, index2) {
+
             if (plot.selected === 'Carrot') {
-                plot.suggestion = 'Tomato';
+                if (index2 + 1 < this.plots[index1].length) {
+                    this.plots[index1][index2 + 1].suggestion = 'Tomato';
+                }
+                if (index1 + 1 < this.plots.length) {
+                    this.plots[index1 + 1][index2].suggestion = 'Tomato';
+                }
+                if (index2 + 1 < this.plots[index1].length 
+                    && index1 + 1 < this.plots.length) {
+                    this.plots[index1 + 1][index2 + 1].suggestion = 'Tomato';
+                }
+                if (index2 - 1 >= 0) {
+                    this.plots[index1][index2 - 1].suggestion = 'Tomato';
+                }
+                if (index1 - 1 >= 0) {
+                    this.plots[index1 - 1][index2].suggestion = 'Tomato';
+                }
+                if (index1 - 1 >= 0 && index2 - 1 >= 0) {
+                    this.plots[index1 - 1][index2 - 1].suggestion = 'Tomato';
+                }
+                if (index1 + 1 < this.plots.length && index2 - 1 >= 0) {
+                    this.plots[index1 + 1][index2 - 1].suggestion = 'Tomato';
+                }
+                if (index1 - 1 >= 0 && index2 + 1 < this.plots[index1].length) {
+                    this.plots[index1 - 1][index2 + 1].suggestion = 'Tomato';
+                }
             }
-            if (plot.selected === 'Tomato') {
-                plot.suggestion = 'Marigold, Dill, Basil';
-            }
-            if (plot.selected === 'Dill') {
-                plot.suggestion = 'Tomato';
-            }
-            if (plot.selected === 'Basil') {
-                plot.suggestion = 'Tomato'
-            }
+
+            // if (plot.selected === 'Tomato') {
+            //     this.plots[index1][index2 + 1].suggestion = 'Marigold, Dill, Basil';
+            // }
+            // if (plot.selected === 'Dill') {
+            //     this.plots[index1][index2 + 1].suggestion = 'Tomato';
+            // }
+            // if (plot.selected === 'Basil') {
+            //     this.plots[index1][index2 + 1].suggestion = 'Tomato'
+            // }
         },
-        shoppingItems: function (plot) {
-            this.items.push(plot.selected);
-        }
+        // shoppingList: function (plot) {
+        //     if (plot.selected != " ") {
+        //         <li>{{ plot.selected }} </li>
+        //     }
+        // }
+
     }
 }
 
