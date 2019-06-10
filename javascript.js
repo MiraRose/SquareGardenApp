@@ -27,7 +27,7 @@ var app = new Vue({
         for (i = 0; i < 4; i++) {
             this.plots.push([]);
             for (x = 0; x < 4; x++) {
-                this.plots[i].push({ selected: `row${i}box${x}`, suggestion: 'none' });
+                this.plots[i].push({ selected: ' ', suggestion: 'none' });
             }
         }
     },

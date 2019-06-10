@@ -19,10 +19,12 @@
         <div id="app">
                 <div>
                         <h2>List of Plants</h2>
-                        <div v-for="item in items">
-                                {{ item }}
+                        <div v-for="row in plots">
+                                <div v-for= "plot in row">
+                                {{ plot.selected }}
                         </div>
-                        <button v-on:click="items = []">Clear</button>
+                        </div>
+                        <!-- <button v-on:click="items = []">Clear</button> -->
                 </div>
 
                 <div class="container dirtArea">
