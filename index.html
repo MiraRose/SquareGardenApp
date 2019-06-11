@@ -37,21 +37,24 @@
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggieSuggestion(plot, index1, index2)">
+                                                                v-on:change="veggiePlanter(plot, index1, index2)">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
-
+                                                                        
                                                                 </option>
                                                         </select>
-                                                        
-                                                        <p><b>Current plant: {{ plot.selected }}</b></p>
+                                                        <img class = "veggieImg" v-bind:src="plot.image">
+                                                        <p class = "veggieImgText"><b>{{ plot.selected }}</b></p>
                                                         <p>Suggested plant: {{ plot.suggestion }}</p>
+                                                        
 
                                                 </div>
                                         </div>
                                 </div>
                         </div>
+                        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/turkkub" title="turkkub">turkkub</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+                        <!-- <div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.1e5d3747425eb2281e7c4d932c965f65.1559145545708.1559235532392.1560213143737.3&__hssc=57440181.7.1560213143737&__hsfp=2784163161" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
                 </div>
 
         </div>

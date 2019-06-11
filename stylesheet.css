@@ -35,3 +35,16 @@ p {
     background-color: #5c2605;
     /* padding-bottom: 100%; */
 }
+
+.veggieImgText {
+position: absolute;
+  top: 35%;
+  left: 35%;
+}
+
+.veggieImg {
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+}

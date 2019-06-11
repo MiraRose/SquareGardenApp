@@ -10,22 +10,19 @@ var app = new Vue({
 
         selected: 'Tomato',
         options: [
-            { text: 'Tomato', value: 'Tomato' },
-            { text: 'Carrot', value: 'Carrot' },
-            { text: 'Lettuce', value: 'Lettuce' },
-            { text: 'Dill', value: 'Dill' },
-            { text: 'Marigold', value: 'Marigold' },
-            { text: 'Basil', value: 'Basil' }
+            { text: 'Tomato', value: 'Tomato'},
+            { text: 'Carrot', value: 'Carrot'},
+            { text: 'Lettuce', value: 'Lettuce'},
+            { text: 'Dill', value: 'Dill'},
+            { text: 'Marigold', value: 'Marigold'},
+            { text: 'Basil', value: 'Basil'}
         ],
 
-        // veggieFriends: [
-        //     {
-        //         tomato: 'Tomato',
-        //         carrot: 'Carrot',
-        //         marigold: 'Marigold'
-        //     }
-        // ],
-        // partner: ' ',
+        // veggies: [
+        //     {'Tomato': 'images/svg/veggies/003-tomato.svg'},
+        //     {'Carrot': 'images/svg/veggies/001-tomato.svg'}
+        // ]
+        
     },
     created: function () {
         var i = 0;
@@ -33,19 +30,21 @@ var app = new Vue({
         for (i = 0; i < 4; i++) {
             this.plots.push([]);
             for (x = 0; x < 4; x++) {
-                this.plots[i].push({ selected: ' ', suggestion: 'none', partner: ' ', img: ' ' });
+                this.plots[i].push({ selected: '', suggestion: 'none', partner: '' , image: 'images/svg/veggies/dirt.svg'});
             }
         }
     },
     methods: {
-        veggieSuggestion: function (plot, index1, index2) {
+        
+        veggiePlanter: function (plot, index1, index2) {
             
-
             if (plot.selected == 'Carrot') {
                 plot.partner = 'Tomato';
+                plot.image = 'images/svg/veggies/001-carrot.svg';
             }
             else if (plot.selected == 'Tomato') {
                 plot.partner = 'Carrot';
+                plot.image = 'images/svg/veggies/003-tomato.svg';
             }
             
 

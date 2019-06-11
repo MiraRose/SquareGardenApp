@@ -3,18 +3,18 @@
 Currently you can:
 
 1. Select a (limited selection of) veggie from the drop box to apply it to a square
-2. Get (limited) suggestions in that square for nearby squares
-3. Makes list, but doesn't update list when a square changes.
+2. Selecting a veggie for a square puts suggestions IN NEARBY squares
+3. Get (limited) suggestions in that square for nearby squares
+4. Makes list, but doesn't update list when a square changes.
 
 Planned features, in no particular order:
 
 1. Icons for veggies
-2. Selecting a veggie for a square puts suggestions IN NEARBY squares
-3. More vegetables/suggestions
-4. Veggie sizes
+2. More vegetables/suggestions
+3. Veggie sizes
     ie: tomatoes should take up 4 squares
     ie: some veggies can take up part of a squara
-5. Being able to sow underneath other veggies (carrots under tomatos)
-6. Custom sized beds
-7. Helpful tips (ie: rabbits really like this, prepare, bury tomatoes 1/2 - 3/4)
-8. Functioning create and export/print list for shopping
+4. Being able to sow underneath other veggies (carrots under tomatos)
+5. Custom sized beds
+6. Helpful tips (ie: rabbits really like this, prepare, bury tomatoes 1/2 - 3/4)
+7. Functioning create and export/print list for shopping
