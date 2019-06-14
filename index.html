@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <title>
-
+Square Gardening App
 </title>
 
 <head>
@@ -20,13 +20,13 @@
                 <div id="plantList">
                         <h2>List of Plants</h2>
 
-                        <div v-for="row in plots">
-                                <div v-for="plot in row">
-
-                                        <p>{{ plot.selected }} </p>
+                        <!-- <div v-for="row in plots">
+                                <div v-for="plot in row"> -->
+                                        <div v-for = "veggie in listOfVeggies">
+                                        <p>{{ veggie.text }} {{veggie.count}} </p>
                                 </div>
-                        </div>
-                        </ul>
+                        <!-- </div> -->
+                       
                         <!-- <button v-on:click="items = []">Clear</button> -->
                 </div>
 
@@ -37,7 +37,7 @@
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggiePlanter(plot, index1, index2)">
+                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker(plot)">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
@@ -45,8 +45,8 @@
                                                                 </option>
                                                         </select>
                                                         <img class="veggieImg" v-bind:src="plot.image">
-                                                        <p class="veggieImgText"><b>{{ plot.selected }}</b></p>
-                                                        <v<p>Suggested: {{ plot.suggestion }}</p>
+                                                        <!-- <p class="veggieImgText"><b>{{ plot.selected }}</b></p> -->
+                                                        <p class = "veggieImgText">Suggested: {{ plot.suggestion }}</p>
 
 
                                                 </div>

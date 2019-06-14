@@ -44,8 +44,8 @@ position: absolute;
 }
 
 .veggieImg {
-    height: 100px;
-    width: 100px;
-    padding-top: 10px;
-    padding-left: 10px;
+    height: 125px;
+    width: 125px;
+    /* padding-top: 10px;
+    padding-left: 10px; */
 }
