@@ -18,10 +18,10 @@ var app = new Vue({
             { text: 'Basil', value: 'Basil'}
         ],
 
-        // veggies: [
-        //     {'Tomato': 'images/svg/veggies/003-tomato.svg'},
-        //     {'Carrot': 'images/svg/veggies/001-tomato.svg'}
-        // ]
+        veggies: [
+            ['Tomato', 'Carrot', 'images/svg/veggies/003-tomato.svg'],
+            ['Carrot', 'Tomato', 'images/svg/veggies/001-carrot.svg']
+        ]
         
     },
     created: function () {
@@ -38,14 +38,20 @@ var app = new Vue({
         
         veggiePlanter: function (plot, index1, index2) {
             
-            if (plot.selected == 'Carrot') {
-                plot.partner = 'Tomato';
-                plot.image = 'images/svg/veggies/001-carrot.svg';
+            for (var i = 0; i < this.veggies.length; i++) {
+                if (plot.selected == this.veggies[i][0]) {
+                    plot.partner = this.veggies[i][1];
+                    plot.image = this.veggies[i][2];
+                }
             }
-            else if (plot.selected == 'Tomato') {
-                plot.partner = 'Carrot';
-                plot.image = 'images/svg/veggies/003-tomato.svg';
-            }
+            // if (plot.selected == 'Carrot') {
+            //     plot.partner = 'Tomato';
+            //     plot.image = 'images/svg/veggies/001-carrot.svg';
+            // }
+            // else if (plot.selected == 'Tomato') {
+            //     plot.partner = 'Carrot';
+            //     plot.image = 'images/svg/veggies/003-tomato.svg';
+            // }
             
 
             if (index2 + 1 < this.plots[index1].length) {
