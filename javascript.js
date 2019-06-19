@@ -1,5 +1,7 @@
 
+
 var app = new Vue({
+    
     el: '#app',
 
     data: {
@@ -10,12 +12,12 @@ var app = new Vue({
 
         selected: 'Tomato',
         options: [
-            { text: 'Tomato', value: 'Tomato'},
-            { text: 'Carrot', value: 'Carrot'},
-            { text: 'Lettuce', value: 'Lettuce'},
-            { text: 'Dill', value: 'Dill'},
-            { text: 'Marigold', value: 'Marigold'},
-            { text: 'Basil', value: 'Basil'}
+            // { text: 'Tomato', value: 'Tomato' },
+            // { text: 'Carrot', value: 'Carrot' },
+            // { text: 'Lettuce', value: 'Lettuce' },
+            // { text: 'Dill', value: 'Dill' },
+            // { text: 'Marigold', value: 'Marigold' },
+            // { text: 'Basil', value: 'Basil' }
         ],
 
         veggies: [
@@ -27,38 +29,45 @@ var app = new Vue({
         ],
 
         listOfVeggies: [
-            
+
         ]
-        
+
     },
 
     created: function () {
-        
+
+        for (var i = 0; i < this.veggies.length; i++) {
+            this.options.push({ text: this.veggies[i][0], value: this.veggies[i][0] })
+        }
+
         for (var i = 0; i < 4; i++) {
             this.plots.push([]);
             for (var x = 0; x < 4; x++) {
-                this.plots[i].push({ selected: '', suggestion: 'none', partner: '' , image: 'images/svg/veggies/dirt.svg'});
+                this.plots[i].push({ selected: '', suggestion: 'none', partner: '', image: 'images/svg/veggies/dirt.svg' });
             }
         }
     },
 
     methods: {
-        listMaker: function (plot) {
-            // for (var i = 0; i < this.plots.length; i++) {
-            //     if (this.listOfVeggies.length > 0 && this.plots.selected != '') {
-            //     for (var x = 0; x < this.listOfVeggies; x++) {
-            //         if (this.plots.selected == this.listOfVeggies[0]) {
-            //             this.listOfVeggies[1] = this.listOfVeggies[1] + 1;
-            //         }
-            //     }
-            // }
-            // else {
-                this.listOfVeggies.push({text: plot.selected, count: 1})
-            // }
+        listMaker: function () {
+            this.listOfVeggies = [];
+            listOfJustVeggies = [];
+            for (var i = 0; i < this.plots.length; i++) {
+                for (var x = 0; x < this.plots[i].length; x++)
+                    if (this.plots[i][x].selected != '') {
+                        listOfJustVeggies.push(this.plots[i][x].selected);
+                    }
+            }
+
+            this.listOfVeggies = _u.countBy(listOfJustVeggies);
+            // var counts = {};
+            // for (var i = 0; i < arr.length; i++) {
+            //     var num = listOfJustVeggies[i];
+            //     counts[num] = counts[num] ? counts[num] + 1 : 1;
             // }
         },
         veggiePlanter: function (plot, index1, index2) {
-            
+
             for (var i = 0; i < this.veggies.length; i++) {
                 if (plot.selected == this.veggies[i][0]) {
                     plot.partner = this.veggies[i][1];

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <title>
-Square Gardening App
+        Square Gardening App
 </title>
 
 <head>
@@ -12,22 +12,18 @@ Square Gardening App
                 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
                 crossorigin="anonymous" />
         <link rel="stylesheet" href="stylesheet.css">
-</head>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Merriweather&display=swap" rel="stylesheet">
 
 <body>
 
         <div id="app">
                 <div id="plantList">
                         <h2>List of Plants</h2>
-
-                        <!-- <div v-for="row in plots">
-                                <div v-for="plot in row"> -->
-                                        <div v-for = "veggie in listOfVeggies">
-                                        <p>{{ veggie.text }} {{veggie.count}} </p>
-                                </div>
-                        <!-- </div> -->
-                       
-                        <!-- <button v-on:click="items = []">Clear</button> -->
+                        
+                        <ul v-for="(value, name) in listOfVeggies">
+                                <li>{{ name }}: {{ value }}</li>
+                        </ul>
+                        
                 </div>
 
                 <div class="container dirtArea">
@@ -37,16 +33,16 @@ Square Gardening App
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker(plot)">
+                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker()">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
 
                                                                 </option>
                                                         </select>
-                                                        <img class="veggieImg" v-bind:src="plot.image">
+                                                        <div><img class="veggieImg" v-bind:src="plot.image"></div>
                                                         <!-- <p class="veggieImgText"><b>{{ plot.selected }}</b></p> -->
-                                                        <p class = "veggieImgText">Suggested: {{ plot.suggestion }}</p>
+                                                        <p class="veggieImgText">Suggested: <br> {{ plot.suggestion }}</p>
 
 
                                                 </div>
@@ -72,7 +68,10 @@ Square Gardening App
 
 
 
-
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+        <script>
+                _u = _.noConflict(); 
+        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>

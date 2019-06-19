@@ -1,21 +1,45 @@
 
 body {
-    background-image: url("images/grassbackground.png");
+    /* background-image: url("images/grassbackground.png"); */
+    background-image: linear-gradient(to right, #6b8c42, #7bc67b);
+    /* background: repeating-linear-gradient(
+  
+  #6b8c42, 
+  #6b8c42 10%,
+  #7bc67b 10%,
+  #7bc67b 20%
+); */
 }
 
 h2 {
-    color: whitesmoke;
-    margin-left: 2px;
+    color: #ffffb5;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* text-transform: uppercase; */
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
 }
  
 p {
-    color: whitesmoke;
+    color: #ffffb5;
+    font-family: 'Merriweather', serif;
+}
+
+li {
+    color: #ffffb5;
+    font-family: 'Merriweather', serif;
 }
 
 #plantList {
     position: absolute;
     float: left;
-    padding-left: 5px;
+    margin-left: 1%;
+    background-color: #5a3921;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    box-shadow: 7px 7px;
 }
 
 .dirtArea {
@@ -33,14 +57,16 @@ p {
 }
 
 .square {
-    background-color: #5c2605;
+    background-color: #5a3921;
     /* padding-bottom: 100%; */
 }
 
 .veggieImgText {
 position: absolute;
-  top: 35%;
-  left: 35%;
+font-family: 'Josefin Sans', sans-serif;
+  top: 18%;
+  left: 10%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .veggieImg {
