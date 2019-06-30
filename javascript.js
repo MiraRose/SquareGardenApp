@@ -25,7 +25,25 @@ var app = new Vue({
             ['Tomato', 'Carrot', 'images/svg/veggies/003-tomato.svg'],
             ['Carrot', 'Tomato', 'images/svg/veggies/001-carrot.svg'],
             ['Lettuce', 'Broccoli, carrots, dill, cilantro', 'images/svg/veggies/036-lettuce.svg'],
-            ['Dill', 'broccoli, cabbage, corn, eggplant, lettuce, onions, cucumbers', 'images/svg/veggies/dill.svg']
+            ['Dill', 'broccoli, cabbage, corn, eggplant, lettuce, onions, cucumbers', 'images/svg/veggies/dill.svg'],
+            ['Pumpkin', 'none', 'images/svg/veggies/002-pumpkin.svg'],
+            ['Watermelon', 'none', 'images/svg/veggies/006-watermelon.svg'],
+            ['Green Onions', 'none', 'images/svg/veggies/010-spring-onion.svg'],
+            ['Eggplant', 'none', 'images/svg/veggies/011-eggplant.svg'],
+            ['Bell Pepper', 'none', 'images/svg/veggies/012-bell-pepper.svg'],
+            ['Potato', 'none', 'images/svg/veggies/013-potato.svg'],
+            ['Strawberries', 'none', 'images/svg/veggies/016-strawberry.svg'],
+            ['Broccoli', 'none', 'images/svg/veggies/018-broccoli.svg'],
+            ['Radish', 'none', 'images/svg/veggies/021-radish.svg'],
+            ['Peas', 'none', 'images/svg/veggies/022-peas.svg'],
+            ['Onion', 'none', 'images/svg/veggies/023-onion.svg'],
+            ['Chili Pepper', 'none', 'images/svg/veggies/028-chili.svg'],
+            ['Garlic', 'none', 'images/svg/veggies/034-garlic.svg'],
+            ['Cantalope', 'none', 'images/svg/veggies/035-melon.svg'],
+            ['Corn', 'none', 'images/svg/veggies/040-corn.svg'],
+            ['Cabbage', 'none', 'images/svg/veggies/042-cabbage.svg'],
+            ['Cucumber', 'none', 'images/svg/veggies/044-cucumber.svg'],
+            ['Asparagus', 'none', 'images/svg/veggies/048-asparagus.svg']
         ],
 
         listOfVeggies: [
@@ -39,6 +57,7 @@ var app = new Vue({
         for (var i = 0; i < this.veggies.length; i++) {
             this.options.push({ text: this.veggies[i][0], value: this.veggies[i][0] })
         }
+        
 
         for (var i = 0; i < 4; i++) {
             this.plots.push([]);
@@ -49,6 +68,16 @@ var app = new Vue({
     },
 
     methods: {
+        clear: function () {
+            this.plots = [];
+            this.listOfVeggies = [];
+            for (var i = 0; i < 4; i++) {
+                this.plots.push([]);
+                for (var x = 0; x < 4; x++) {
+                    this.plots[i].push({ selected: '', suggestion: 'none', partner: '', image: 'images/svg/veggies/dirt.svg' });
+                }
+            }
+        },
         listMaker: function () {
             this.listOfVeggies = [];
             listOfJustVeggies = [];

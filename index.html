@@ -19,21 +19,34 @@
         <div id="app">
                 <div id="plantList">
                         <h2>List of Plants</h2>
-                        
+
                         <ul v-for="(value, name) in listOfVeggies">
                                 <li>{{ name }}: {{ value }}</li>
                         </ul>
-                        
+
                 </div>
 
+                <div id="menu">
+                        <h2>Menu</h2>
+                        <div class = "buttonDiv"><button v-on:click="clear()" class ="customButton">Clear</button></div>
+
+                </div>
+
+
                 <div class="container dirtArea">
+                        <div class="row">
+                                <div class="col-md">
+                                        <h1>Square Gardening App</h1>
+                                </div>
+                        </div>
                         <div v-for="(row, index1) in plots">
                                 <div class="row no-gutter">
                                         <div v-for="(plot, index2) in row">
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker()">
+                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker()"
+                                                                class="customSelect">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">
                                                                         {{ option.text }}
@@ -41,8 +54,9 @@
                                                                 </option>
                                                         </select>
                                                         <div><img class="veggieImg" v-bind:src="plot.image"></div>
-                                                        <!-- <p class="veggieImgText"><b>{{ plot.selected }}</b></p> -->
-                                                        <p class="veggieImgText">Suggested: <br> {{ plot.suggestion }}</p>
+
+                                                        <p class="veggieImgText">Suggested: <br> {{ plot.suggestion }}
+                                                        </p>
 
 
                                                 </div>
@@ -56,13 +70,9 @@
                                         title="Flaticon">www.flaticon.com</a> are licensed by <a
                                         href="http://creativecommons.org/licenses/by/3.0/"
                                         title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                        <!-- <div>Icons made by <a
-                                        href="https://www.freepik.com/?__hstc=57440181.1e5d3747425eb2281e7c4d932c965f65.1559145545708.1559235532392.1560213143737.3&__hssc=57440181.7.1560213143737&__hsfp=2784163161"
-                                        title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
-                                        title="Flaticon">www.flaticon.com</a> is licensed by <a
-                                        href="http://creativecommons.org/licenses/by/3.0/"
-                                        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
                 </div>
+
+                
 
         </div>
 
