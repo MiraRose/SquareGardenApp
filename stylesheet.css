@@ -82,6 +82,7 @@ li {
     border-width: 3px;
     border-color: black;
     box-shadow: 7px 7px;
+    padding: 5px 5px 5px 5px;
 }
 
 .dirtArea {
@@ -118,4 +119,10 @@ font-size: 12px;
     padding: 5px 5px 5px 5px;
     /* padding-top: 10px;
     padding-left: 10px; */
+}
+
+.madeBy {
+    font-size: 12px;
+    font-family: 'Merriweather', serif;
+    padding-top: 5px;
 }
