@@ -1,6 +1,6 @@
 # SquareGardenApp
 
-To demo app either open index.html in browser OR got to: https://www.mirandaregan.com/SquareGardenApp/index.html
+To demo app either open index.html in browser OR go to: https://www.mirandaregan.com/SquareGardenApp/index.html
 
 Currently you can:
 
