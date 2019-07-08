@@ -1,5 +1,9 @@
 # SquareGardenApp
 
+To Demo App Either:
+Open index.html in browser OR
+Go to: https://www.mirandaregan.com/SquareGardenApp/index.html
+
 Currently you can:
 
 1. Select a (limited selection of) veggie from the drop box to apply it to a square
