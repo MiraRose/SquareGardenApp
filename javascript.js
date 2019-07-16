@@ -12,16 +12,11 @@ var app = new Vue({
 
         selected: 'Tomato',
         options: [
-            // { text: 'Tomato', value: 'Tomato' },
-            // { text: 'Carrot', value: 'Carrot' },
-            // { text: 'Lettuce', value: 'Lettuce' },
-            // { text: 'Dill', value: 'Dill' },
-            // { text: 'Marigold', value: 'Marigold' },
-            // { text: 'Basil', value: 'Basil' }
+            // example: { text: 'Tomato', value: 'Tomato' },
         ],
 
         veggies: [
-            //selected  //suggested //selected image
+            //selected  //suggested                             //selected image
             ['Tomato', 'Asparagus, basil, beans, marigold, garlic, corn, dill, carrots, eggplant', 'images/svg/veggies/003-tomato.svg'],
             ['Carrot', 'Lettuce, onion, beans, strawberries', 'images/svg/veggies/001-carrot.svg'],
             ['Lettuce', 'Broccoli, carrots, dill, radish, onions, beans, broccoli', 'images/svg/veggies/036-lettuce.svg'],
@@ -71,7 +66,7 @@ var app = new Vue({
              return 0;
         })
 
-        for (var i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
             this.plots.push([]);
             for (var x = 0; x < 4; x++) {
                 this.plots[i].push({ selected: '', suggestion: 'none', partner: '', image: 'images/svg/veggies/dirt.svg' });
@@ -83,9 +78,9 @@ var app = new Vue({
         clear: function () {
             this.plots = [];
             this.listOfVeggies = [];
-            for (var i = 0; i < 4; i++) {
+            for (let i = 0; i < 4; i++) {
                 this.plots.push([]);
-                for (var x = 0; x < 4; x++) {
+                for (let x = 0; x < 4; x++) {
                     this.plots[i].push({ selected: '', suggestion: 'none', partner: '', image: 'images/svg/veggies/dirt.svg' });
                 }
             }
@@ -93,8 +88,8 @@ var app = new Vue({
         listMaker: function () {
             this.listOfVeggies = [];
             listOfJustVeggies = [];
-            for (var i = 0; i < this.plots.length; i++) {
-                for (var x = 0; x < this.plots[i].length; x++)
+            for (let i = 0; i < this.plots.length; i++) {
+                for (let x = 0; x < this.plots[i].length; x++)
                     if (this.plots[i][x].selected != '') {
                         listOfJustVeggies.push(this.plots[i][x].selected);
                     }
@@ -105,7 +100,7 @@ var app = new Vue({
         },
         veggiePlanter: function (plot, index1, index2) {
 
-            for (var i = 0; i < this.veggies.length; i++) {
+            for (let i = 0; i < this.veggies.length; i++) {
                 if (plot.selected == this.veggies[i][0]) {
                     plot.partner = this.veggies[i][1];
                     plot.image = this.veggies[i][2];
