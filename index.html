@@ -48,13 +48,13 @@
                                         <h1>Square Gardening App</h1>
                                 </div>
                         </div>
-                        <div v-for="(row, index1) in plots">
+                        <div v-for="(row, indexOfRow) in plots">
                                 <div class="row no-gutter">
-                                        <div v-for="(plot, index2) in row">
+                                        <div v-for="(plot, indexOfColumn) in row">
                                                 <div class="col-md-3 outerSquareBorder square">
 
                                                         <select v-model="plot.selected"
-                                                                v-on:change="veggiePlanter(plot, index1, index2); listMaker()"
+                                                                v-on:change="veggiePlanter(plot, indexOfRow, indexOfColumn); listMaker()"
                                                                 class="customSelect">
                                                                 <option v-for="option in options"
                                                                         v-bind:value="option.value">

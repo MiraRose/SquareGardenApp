@@ -56,15 +56,27 @@ var app = new Vue({
 
     created: function () {
 
+        /**
+         *  Populates selection list of veggies at start up
+         */
+
         for (var i = 0; i < this.veggies.length; i++) {
             this.options.push({ text: this.veggies[i][0], value: this.veggies[i][0] })
         }
+
+        /**
+         *  Sorts list of veggies for selection alphabetically at start up
+         */
 
         this.options.sort(function(a, b) {
             if(a.text < b.text) { return -1; }
             if(a.text > b.text) { return 1; }
              return 0;
         })
+
+        /**
+         * Creates 4x4 plot at start up
+         */
 
         for (let i = 0; i < 4; i++) {
             this.plots.push([]);
@@ -75,6 +87,11 @@ var app = new Vue({
     },
 
     methods: {
+
+        /**
+         * Clears the garden plot, resetting to dirt
+         */
+
         clear: function () {
             this.plots = [];
             this.listOfVeggies = [];
@@ -85,6 +102,11 @@ var app = new Vue({
                 }
             }
         },
+
+        /**
+         * As veggies are chosen creates a list with counts
+         */
+
         listMaker: function () {
             this.listOfVeggies = [];
             listOfJustVeggies = [];
@@ -98,7 +120,14 @@ var app = new Vue({
             this.listOfVeggies = _u.countBy(listOfJustVeggies);
             
         },
-        veggiePlanter: function (plot, index1, index2) {
+
+        /**
+         * Sets image and partners for plot based on selection
+         * @param {object} plot - the selected plot
+         * @param {int} indexOfRow - index of row
+         * @param {int} indexOfColumn - index of column
+         */
+        veggiePlanter: function (plot, indexOfRow, indexOfColumn) {
 
             for (let i = 0; i < this.veggies.length; i++) {
                 if (plot.selected == this.veggies[i][0]) {
@@ -107,30 +136,43 @@ var app = new Vue({
                 }
             }
 
-            if (index2 + 1 < this.plots[index1].length) {
-                this.plots[index1][index2 + 1].suggestion = plot.partner;
+            this.makeSuggestion(plot, indexOfRow, indexOfColumn);
+            
+        },
+
+        /**
+         * Populates suggestions within grid
+         * @param {object} plot - the selected plot
+         * @param {int} indexOfRow - index of row
+         * @param {int} indexOfColumn - index of column
+         */
+
+        makeSuggestion: function (plot, indexOfRow, indexOfColumn) {
+
+            if (indexOfColumn + 1 < this.plots[indexOfRow].length) {
+                this.plots[indexOfRow][indexOfColumn + 1].suggestion = plot.partner;
             }
-            if (index1 + 1 < this.plots.length) {
-                this.plots[index1 + 1][index2].suggestion = plot.partner;
+            if (indexOfRow + 1 < this.plots.length) {
+                this.plots[indexOfRow + 1][indexOfColumn].suggestion = plot.partner;
             }
-            if (index2 + 1 < this.plots[index1].length
-                && index1 + 1 < this.plots.length) {
-                this.plots[index1 + 1][index2 + 1].suggestion = plot.partner;
+            if (indexOfColumn + 1 < this.plots[indexOfRow].length
+                && indexOfRow + 1 < this.plots.length) {
+                this.plots[indexOfRow + 1][indexOfColumn + 1].suggestion = plot.partner;
             }
-            if (index2 - 1 >= 0) {
-                this.plots[index1][index2 - 1].suggestion = plot.partner;
+            if (indexOfColumn - 1 >= 0) {
+                this.plots[indexOfRow][indexOfColumn - 1].suggestion = plot.partner;
             }
-            if (index1 - 1 >= 0) {
-                this.plots[index1 - 1][index2].suggestion = plot.partner;
+            if (indexOfRow - 1 >= 0) {
+                this.plots[indexOfRow - 1][indexOfColumn].suggestion = plot.partner;
             }
-            if (index1 - 1 >= 0 && index2 - 1 >= 0) {
-                this.plots[index1 - 1][index2 - 1].suggestion = plot.partner;
+            if (indexOfRow - 1 >= 0 && indexOfColumn - 1 >= 0) {
+                this.plots[indexOfRow - 1][indexOfColumn - 1].suggestion = plot.partner;
             }
-            if (index1 + 1 < this.plots.length && index2 - 1 >= 0) {
-                this.plots[index1 + 1][index2 - 1].suggestion = plot.partner;
+            if (indexOfRow + 1 < this.plots.length && indexOfColumn - 1 >= 0) {
+                this.plots[indexOfRow + 1][indexOfColumn - 1].suggestion = plot.partner;
             }
-            if (index1 - 1 >= 0 && index2 + 1 < this.plots[index1].length) {
-                this.plots[index1 - 1][index2 + 1].suggestion = plot.partner;
+            if (indexOfRow - 1 >= 0 && indexOfColumn + 1 < this.plots[indexOfRow].length) {
+                this.plots[indexOfRow - 1][indexOfColumn + 1].suggestion = plot.partner;
             }
         }
 
