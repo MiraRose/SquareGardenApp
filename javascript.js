@@ -43,7 +43,7 @@ var app = new Vue({
             ['Beans', 'Cucumbers, cabbage, carrots, corn, marigolds, potato, radish, lettuce, onion', 'images/svg/veggies/legumes.svg'],
             ['Spinach', 'Strawberries, peas, beans', 'images/svg/veggies/legumes.svg'],
             ['Basil', 'Chamomile', 'images/svg/veggies/002-basil.svg'],
-            ['Chamomile', 'Chamomile', 'images/svg/veggies/007-chamomile.svg']
+            ['Chamomile', 'None', 'images/svg/veggies/007-chamomile.svg']
 
 
         ],
@@ -127,6 +127,7 @@ var app = new Vue({
          * @param {int} indexOfRow - index of row
          * @param {int} indexOfColumn - index of column
          */
+        
         veggiePlanter: function (plot, indexOfRow, indexOfColumn) {
 
             for (let i = 0; i < this.veggies.length; i++) {
