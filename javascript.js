@@ -15,38 +15,39 @@ var app = new Vue({
             // example: { text: 'Tomato', value: 'Tomato' },
         ],
 
-        veggies: [
+        veggies: 
             //selected  //suggested                             //selected image
-            ['Tomato', 'Asparagus, basil, beans, marigold, garlic, corn, dill, carrots, eggplant', 'images/svg/veggies/003-tomato.svg'],
-            ['Carrot', 'Lettuce, onion, beans, strawberries', 'images/svg/veggies/001-carrot.svg'],
-            ['Lettuce', 'Broccoli, carrots, dill, radish, onions, beans, broccoli', 'images/svg/veggies/036-lettuce.svg'],
-            ['Dill', 'broccoli, cabbage, corn, eggplant, lettuce, onions, cucumbers', 'images/svg/veggies/dill.svg'],
-            ['Pumpkin', 'Radishes', 'images/svg/veggies/002-pumpkin.svg'],
-            ['Watermelon', 'Corn', 'images/svg/veggies/006-watermelon.svg'],
-            ['Green Onions', 'Carrots, dill, lettuce, marigolds, tomatos', 'images/svg/veggies/010-spring-onion.svg'],
-            ['Eggplant', 'Marigold, dill, beans', 'images/svg/veggies/011-eggplant.svg'],
-            ['Pepper', 'Beans, tomatos, onions, basil', 'images/svg/veggies/012-bell-pepper.svg'],
-            ['Potato', 'Beans, marigolds, peas, onion, garlic', 'images/svg/veggies/013-potato.svg'],
-            ['Strawberries', 'Bush beans, onions', 'images/svg/veggies/016-strawberry.svg'],
-            ['Broccoli', 'Dill, lettuce, onions, tomato, spinach', 'images/svg/veggies/018-broccoli.svg'],
-            ['Radish', 'Lettuce', 'images/svg/veggies/021-radish.svg'],
-            ['Peas', 'Garlic', 'images/svg/veggies/022-peas.svg'],
-            ['Onion', 'Carrots, chamomile, strawberries, dill, lettuce, marigolds, tomatos', 'images/svg/veggies/023-onion.svg'],
-            ['Chili Pepper', 'Beans, tomatos, onions', 'images/svg/veggies/028-chili.svg'],
-            ['Garlic', 'Peas', 'images/svg/veggies/034-garlic.svg'],
-            ['Cantalope', 'Corn', 'images/svg/veggies/035-melon.svg'],
-            ['Corn', 'Dill, beans, potatos', 'images/svg/veggies/040-corn.svg'],
-            ['Cabbage', 'Beans, chamomile, marigold, dill, tomato', 'images/svg/veggies/042-cabbage.svg'],
-            ['Cucumber', 'Radishes, chamomile, marigold, peas, beans, carrots, dill, onions, garlic', 'images/svg/veggies/044-cucumber.svg'],
-            ['Asparagus', 'Dill, tomatoes, basil', 'images/svg/veggies/048-asparagus.svg'],
-            ['Marigold', 'Most plants', 'images/svg/veggies/marigold.svg'],
-            ['Beans', 'Cucumbers, cabbage, carrots, corn, marigolds, potato, radish, lettuce, onion', 'images/svg/veggies/legumes.svg'],
-            ['Spinach', 'Strawberries, peas, beans', 'images/svg/veggies/legumes.svg'],
-            ['Basil', 'Chamomile', 'images/svg/veggies/002-basil.svg'],
-            ['Chamomile', 'None', 'images/svg/veggies/007-chamomile.svg']
-
-
-        ],
+            {            
+            'Asparagus': {'friends':'Dill, tomatoes, basil', 'img':'images/svg/veggies/048-asparagus.svg'},
+            'Basil': {'friends':'Chamomile', 'img':'images/svg/veggies/002-basil.svg'},
+            'Beans': {'friends':'Cucumbers, cabbage, carrots, corn, marigolds, potato, radish, lettuce, onion', 'img':'images/svg/veggies/legumes.svg'},
+            'Broccoli': {'friends':'Dill, lettuce, onions, tomato, spinach', 'img':'images/svg/veggies/018-broccoli.svg'},
+            'Cabbage': {'friends':'Beans, chamomile, marigold, dill, tomato', 'img':'images/svg/veggies/042-cabbage.svg'},
+            'Cantalope': {'friends':'Corn', 'img':'images/svg/veggies/035-melon.svg'},
+            'Carrot': {'friends':'Lettuce, onion, beans, strawberries', 'img':'images/svg/veggies/001-carrot.svg'},
+            'Chamomile': {'friends':'None', 'img':'images/svg/veggies/007-chamomile.svg'},
+            'Chili Pepper': {'friends':'Beans, tomatos, onions', 'img':'images/svg/veggies/028-chili.svg'},
+            'Corn': {'friends':'Dill, beans, potatos', 'img':'images/svg/veggies/040-corn.svg'},
+            'Cucumber': {'friends':'Radishes, chamomile, marigold, peas, beans, carrots, dill, onions, garlic', 'img':'images/svg/veggies/044-cucumber.svg'},
+            'Dill': {'friends':'broccoli, cabbage, corn, eggplant, lettuce, onions, cucumbers', 'img':'images/svg/veggies/dill.svg'},
+            'Eggplant': {'friends':'Marigold, dill, beans', 'img':'images/svg/veggies/011-eggplant.svg'},
+            'Garlic': {'friends':'Peas', 'img':'images/svg/veggies/034-garlic.svg'},
+            'Green Onions': {'friends':'Carrots, dill, lettuce, marigolds, tomatos', 'img':'images/svg/veggies/010-spring-onion.svg'},
+            'Lettuce': {'friends':'Broccoli, carrots, dill, radish, onions, beans, broccoli', 'img':'images/svg/veggies/036-lettuce.svg'},
+            'Marigold': {'friends':'Most plants', 'img':'images/svg/veggies/marigold.svg'},
+            'Onion': {'friends':'Carrots, chamomile, strawberries, dill, lettuce, marigolds, tomatos', 'img':'images/svg/veggies/023-onion.svg'},
+            'Peas': {'friends':'Garlic', 'img':'images/svg/veggies/022-peas.svg'},
+            'Pepper': {'friends':'Beans, tomatos, onions, basil', 'img':'images/svg/veggies/012-bell-pepper.svg'},
+            'Potato': {'friends':'Beans, marigolds, peas, onion, garlic', 'img':'images/svg/veggies/013-potato.svg'},
+            'Pumpkin': {'friends':'Radishes', 'img':'images/svg/veggies/002-pumpkin.svg'},
+            'Radish': {'friends':'Lettuce', 'img':'images/svg/veggies/021-radish.svg'},
+            'Spinach': {'friends':'Strawberries, peas, beans', 'img':'images/svg/veggies/legumes.svg'},
+            'Strawberries': {'friends':'Bush beans, onions', 'img':'images/svg/veggies/016-strawberry.svg'},
+            'Tomato': {'friends':'Asparagus, basil, beans, marigold, garlic, corn, dill, carrots, eggplant', 'img':'images/svg/veggies/003-tomato.svg'},
+            'Watermelon': {'friends':'Corn', 'img':'images/svg/veggies/006-watermelon.svg'}
+        }
+        
+        ,
 
         listOfVeggies: [
 
@@ -60,19 +61,9 @@ var app = new Vue({
          *  Populates selection list of veggies at start up
          */
 
-        for (var i = 0; i < this.veggies.length; i++) {
-            this.options.push({ text: this.veggies[i][0], value: this.veggies[i][0] })
+        for (let key of Object.keys(this.veggies)) {
+            this.options.push({ text: key, value: key })
         }
-
-        /**
-         *  Sorts list of veggies for selection alphabetically at start up
-         */
-
-        this.options.sort(function(a, b) {
-            if(a.text < b.text) { return -1; }
-            if(a.text > b.text) { return 1; }
-             return 0;
-        })
 
         /**
          * Creates 4x4 plot at start up
@@ -110,10 +101,10 @@ var app = new Vue({
         listMaker: function () {
             this.listOfVeggies = [];
             listOfJustVeggies = [];
-            for (let i = 0; i < this.plots.length; i++) {
-                for (let x = 0; x < this.plots[i].length; x++)
-                    if (this.plots[i][x].selected != '') {
-                        listOfJustVeggies.push(this.plots[i][x].selected);
+            for (let plot of this.plots) {
+                for (let subplot of plot)
+                    if (subplot.selected != '') {
+                        listOfJustVeggies.push(subplot.selected);
                     }
             }
 
@@ -130,12 +121,8 @@ var app = new Vue({
         
         veggiePlanter: function (plot, indexOfRow, indexOfColumn) {
 
-            for (let i = 0; i < this.veggies.length; i++) {
-                if (plot.selected == this.veggies[i][0]) {
-                    plot.partner = this.veggies[i][1];
-                    plot.image = this.veggies[i][2];
-                }
-            }
+            plot.partner = this.veggies[plot.selected].friends;
+            plot.image = this.veggies[plot.selected].img;
 
             this.makeSuggestion(plot, indexOfRow, indexOfColumn);
             
