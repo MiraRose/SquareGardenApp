@@ -1,14 +1,7 @@
 
 body {
-    /* background-image: url("images/grassbackground.png"); */
+
     background-image: linear-gradient(to right, #6b8c42, #7bc67b);
-    /* background: repeating-linear-gradient(
-  
-  #6b8c42, 
-  #6b8c42 10%,
-  #7bc67b 10%,
-  #7bc67b 20%
-); */
 }
 
 h1 {
@@ -23,7 +16,6 @@ h2 {
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
-    /* text-transform: uppercase; */
     font-family: 'Josefin Sans', sans-serif;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 
@@ -117,8 +109,6 @@ font-size: 12px;
     height: 120px;
     width: 120px;
     padding: 5px 5px 5px 5px;
-    /* padding-top: 10px;
-    padding-left: 10px; */
 }
 
 .madeBy {
