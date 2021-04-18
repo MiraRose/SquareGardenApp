@@ -198,7 +198,7 @@ export default {
                   let veggie = this.plots[plot][subplot].selected
                     if (veggie != '') {
                       console.log(veggie)
-                      if (Object.prototype.hasOwnProperty.call(this.listOfVeggies, veggie)) {
+                      if (Object.prototype.hasOwnProperty.call(localListOfVeggies, veggie)) {
                         localListOfVeggies[veggie] = localListOfVeggies[veggie] + 1
                       } else {
                         localListOfVeggies[veggie] = 1;
@@ -237,31 +237,29 @@ export default {
 
         makeSuggestion: function (plot, indexOfRow, indexOfColumn) {
 
-            
-            if (indexOfColumn + 1 < this.plots[indexOfRow].length) {
-                this.plots[indexOfRow][indexOfColumn + 1].suggestion = plot.partner;
-            }
-            if (indexOfRow + 1 < this.plots.length) {
-                this.plots[indexOfRow + 1][indexOfColumn].suggestion = plot.partner;
-            }
-            if (indexOfColumn + 1 < this.plots[indexOfRow].length
-                && indexOfRow + 1 < this.plots.length) {
-                this.plots[indexOfRow + 1][indexOfColumn + 1].suggestion = plot.partner;
-            }
-            if (indexOfColumn - 1 >= 0) {
-                this.plots[indexOfRow][indexOfColumn - 1].suggestion = plot.partner;
-            }
-            if (indexOfRow - 1 >= 0) {
-                this.plots[indexOfRow - 1][indexOfColumn].suggestion = plot.partner;
-            }
-            if (indexOfRow - 1 >= 0 && indexOfColumn - 1 >= 0) {
-                this.plots[indexOfRow - 1][indexOfColumn - 1].suggestion = plot.partner;
-            }
-            if (indexOfRow + 1 < this.plots.length && indexOfColumn - 1 >= 0) {
-                this.plots[indexOfRow + 1][indexOfColumn - 1].suggestion = plot.partner;
-            }
-            if (indexOfRow - 1 >= 0 && indexOfColumn + 1 < this.plots[indexOfRow].length) {
-                this.plots[indexOfRow - 1][indexOfColumn + 1].suggestion = plot.partner;
+          const originalSquare = String(indexOfRow) + String(indexOfColumn)
+          indexOfRow = parseInt(indexOfRow)
+          indexOfColumn = parseInt(indexOfColumn)
+
+          let directions = [indexOfColumn, indexOfRow]
+            const up = indexOfRow - 1
+            directions.push(up)
+            const down = indexOfRow + 1
+            directions.push(down)
+            const left = indexOfColumn - 1
+            directions.push(left)
+            const right = indexOfColumn + 1
+            directions.push(right)
+
+            for (let direction of directions) {
+             
+              if (direction >= 0) {
+                for (let direction2 of directions) {
+                  if (direction2 >= 0 && String(direction) + String(direction2) != originalSquare) {
+                    this.plots[direction][direction2].suggestion = plot.partner
+                  }
+                }
+              }
             }
         }
       
