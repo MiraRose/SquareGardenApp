@@ -199,11 +199,8 @@ export default {
                     if (veggie != '') {
                       console.log(veggie)
                       if (Object.prototype.hasOwnProperty.call(this.listOfVeggies, veggie)) {
-                        console.log("Got here")
                         localListOfVeggies[veggie] = localListOfVeggies[veggie] + 1
                       } else {
-                        console.log("Got here 2")
-                        
                         localListOfVeggies[veggie] = 1;
                       }
                         
